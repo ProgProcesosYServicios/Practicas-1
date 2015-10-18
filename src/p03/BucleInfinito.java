@@ -1,4 +1,4 @@
-package libro.azul;
+package p03;
 
 /**
  * Clase principal de la aplicación. Tiene un bucle infinito
