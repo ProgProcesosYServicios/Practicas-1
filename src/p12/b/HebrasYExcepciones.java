@@ -15,7 +15,7 @@ class MiHebra extends Thread {
 	 * objeto. Lanza una excepción.
 	 */
 	public void run() {
-
+		System.out.println("Soy la hebra "+Thread.currentThread().getId());
 		throw new NullPointerException();
 		
 	} // run
@@ -41,14 +41,17 @@ public class HebrasYExcepciones
 	 * @throws InterruptedException 
 	 */
 	public static void main(String[] args) throws InterruptedException {
-		
+		long id = Thread.currentThread().getId();
+		System.out.println("Soy la hebra "+id);
+
 		MiHebra mh = new MiHebra();
 		mh.setUncaughtExceptionHandler(new HebrasYExcepciones());
+		
 		mh.start();
 		
 		mh.join();
 		
-		System.out.println("La hebra ha terminado.");
+		System.out.println(id+"]La hebra ha terminado.");
 
 	} // main
 
@@ -62,11 +65,11 @@ public class HebrasYExcepciones
 	 * @param t Hebra que ha terminado precipitadamente.
 	 * @param e Excepción que ha ocasionado la finalización.
 	 */
-	@Override
+	
 	public void uncaughtException(Thread t, Throwable e) {
 
-		System.out.println("La hebra " + t + " acabó por " + e);
-		System.out.println("(ejecutándome desde " + Thread.currentThread() + ")");
+		System.out.println(Thread.currentThread().getId()+"]La hebra " + t + " acabó por " + e);
+		System.out.println(Thread.currentThread().getId()+"](ejecutándome desde " + Thread.currentThread() + ")");
 
 	} // uncaughtException
 

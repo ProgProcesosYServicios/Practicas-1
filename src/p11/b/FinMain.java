@@ -47,6 +47,7 @@ public class FinMain {
 		MiHebra mh = new MiHebra();
 		mh.setDaemon(true);
 		mh.start();
+		Thread.sleep(10000);
 		System.out.println("... y acabamos");
 
 	} // main

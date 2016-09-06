@@ -6,7 +6,7 @@ package p09;
  * 
  * @author Pedro Pablo Gómez Martín
  */
-class MiHebra3 extends Thread {
+class MiHebra extends Thread {
 
 	/**
 	 * Código principal de la hebra. Se lanzará en un hilo de
@@ -17,7 +17,7 @@ class MiHebra3 extends Thread {
 
 		System.out.println("[hebra]:\tDormimos un rato.");
 		try {
-			Thread.sleep(1000);
+			Thread.sleep(10000);
 		} catch (InterruptedException e) {
 			// Ignoramos la excepción.
 		}
@@ -45,14 +45,14 @@ public class RelanzandoHebra {
 	 */
 	public static void main(String[] args) throws InterruptedException {
 
-		MiHebra3 mh = new MiHebra3();
+		MiHebra mh = new MiHebra();
 		System.out.println("[main]: Lanzando la hebra...");
 		mh.start();
 		System.out.println("[main]: Dormimos un rato.");
-		Thread.sleep(3000);
+		Thread.sleep(12000);
 		// Hemos dado tiempo suficiente para que la hebra termine.
 		System.out.println("[main]: Relanzamos la hebra.");
-		mh.start();
+		mh.run();
 
 		// Bucle infinito.
 		while(true)

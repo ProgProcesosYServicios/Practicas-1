@@ -44,7 +44,7 @@ public class LecturaTeclado {
 		java.util.Scanner scanner;
 		scanner = new java.util.Scanner(System.in);
 		scanner.next();
-
+		System.out.println("seguimos");
 		// Bucle infinito.
 		while(true)
 			;

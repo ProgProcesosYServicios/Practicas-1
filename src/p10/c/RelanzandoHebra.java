@@ -18,7 +18,7 @@ class MiHebra extends Thread {
 
 		System.out.println("[hebra]:\tDormimos un rato.");
 		try {
-			Thread.sleep(60000);
+			Thread.sleep(5000);
 		} catch (InterruptedException e) {
 			// Ignoramos la excepción.
 		}
@@ -56,7 +56,7 @@ public class RelanzandoHebra {
 		} while(mh.isAlive());
 		System.out.println();
 		System.out.println("[main]: Relanzamos la hebra.");
-		mh.start();
+		mh.run();
 
 		// Bucle infinito.
 		while(true)
